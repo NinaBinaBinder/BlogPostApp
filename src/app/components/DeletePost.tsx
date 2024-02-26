@@ -18,7 +18,7 @@ export default async function DeletePost({ id }: { id:number}) {
     <form action={handleDelete}>
         <button
       
-      className="rounded bg-red-500 text-l text-white h-16 p-3"
+      className="deleteButton"
     >
       delete post
     </button>

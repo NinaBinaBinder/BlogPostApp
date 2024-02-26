@@ -1,9 +1,7 @@
-import { deleteComment, getComments, getPosts } from "@/app/actions";
+import { getComments, getPosts } from "@/app/actions";
 import AddComment from "@/app/components/AddComment";
 import CommentCard from "@/app/components/CommentCard";
 import DeleteComment from "@/app/components/DeleteComment";
-import DeletePost from "@/app/components/DeletePost";
-import Navbar from "@/app/components/Navbar";
 
 type PostPageId = {
   params: { postId: string };
@@ -19,22 +17,20 @@ export default async function post({ params: { postId } }: PostPageId) {
     <div>
       <h1 className="h1">{post.title}</h1>
 
-      <p className="text-xl m-10 m-auto">{post.content}</p>
+      <p className="text-xl m-10">{post.content}</p>
 
-      <div id="Comments">
-        <p className="h3">Comment Section:</p>
+      <div className="flex flex-col">
+        {comments.length === 0 ? 
+          <p className="h3 mx-10">no comments yet :((</p> : <p></p>}
+
         {comments.map((comment) => (
-          <div className="flex">
-            <CommentCard comment={comment} />
-            <DeleteComment comment={comment} />
-          </div>
+          <CommentCard comment={comment} />
         ))}
 
         <div>
           <AddComment postId={Number(postId)} />
         </div>
       </div>
-      <DeletePost id={post.id} />
     </div>
   );
 }

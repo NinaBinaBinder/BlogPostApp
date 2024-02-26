@@ -6,7 +6,7 @@ import { eq } from "drizzle-orm";
 
 export type Comment = {
   user: string;
-  date: string | null;
+  date: Date;
   id: number;
   content: string;
   postId: number;
@@ -16,7 +16,7 @@ export type Post = {
   id: number;
   title: string;
   content: string;
-  date: string;
+  date: Date;
 };
 
 export async function getPosts() {

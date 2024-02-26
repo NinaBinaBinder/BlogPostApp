@@ -14,7 +14,7 @@ export default function DeleteComment({ comment }: { comment: Comment }) {
   return (
     <button
       onClick={handleDelete}
-      className="rounded bg-red-500 text-l text-white h-16 p-3"
+      className="deleteButton"
     >
       delete comment
     </button>
