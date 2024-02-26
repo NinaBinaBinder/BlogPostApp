@@ -4,21 +4,6 @@ import db from "@/db/connection";
 import { commentsTable, postsTable } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
-export type Comment = {
-  user: string;
-  date: Date;
-  id: number;
-  content: string;
-  postId: number;
-};
-
-export type Post = {
-  id: number;
-  title: string;
-  content: string;
-  date: Date;
-};
-
 export async function getPosts() {
   const posts = await db.select().from(postsTable);
   return posts;

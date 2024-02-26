@@ -11,13 +11,13 @@ export default function AddComment({ postId }: { postId: number }) {
 
   const router = useRouter();
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
+  async function handleSubmit() {
     if (user.length < 3 || content.length < 3) {
+      // TODO: never use alert
       alert("please enter valid username");
     } else {
       try {
+        // this will completely block your whole application until this function is done
         await addComment({ postId, user, content });
       } catch (error) {
         console.error(error);
@@ -27,9 +27,8 @@ export default function AddComment({ postId }: { postId: number }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="form">
+    <form className="form">
       <p className="h2"> New Comment</p>
-
       <input
         className="input"
         type="text"
@@ -44,7 +43,9 @@ export default function AddComment({ postId }: { postId: number }) {
         placeholder="comment"
         onChange={(e) => setContent(e.target.value)}
       />
-      <button className="btn-primary">Add Comment</button>
+      <button type="button" className="btn-primary" onClick={handleSubmit}>
+        Add Comment
+      </button>
     </form>
   );
 }

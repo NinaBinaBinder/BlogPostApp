@@ -12,16 +12,10 @@ export default async function Home() {
       <p className="h1">All Posts</p>
       <div className="cols">
         {posts.map((post) => (
-          <div>
+          <div key={post.id}>
             <DeletePost id={post.id}></DeletePost>
             <Link href={`./post/${post.id}`}>
-              <PostCard
-                post={{
-                  title: post.title,
-                  content: post.content,
-                  date: post.date,
-                }}
-              />
+              <PostCard {...post} />
             </Link>
           </div>
         ))}
