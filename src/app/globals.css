@@ -2,32 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer components {
+    
+    .btn-primary {
+        @apply py-2 px-5 bg-blue-500 w-1/2 m-auto my-5 text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75;
+      }
+      .btn-secondary {
+        @apply py-3 px-5  my-5 text-black font-semibold rounded border hover:shadow-xl focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75;
+      }
+  
+      .h1 {
+          @apply font-bold text-4xl text-center m-10
+      }
+  
+      .card {
+          @apply relative rounded p-3 px-5 pb-10 hover:bg-blue-50 m-5 border hover:border-blue-600 
+      }
+  
+      .form{
+          @apply flex flex-col m-8 p-2 rounded w-1/2 bg-blue-50 border hover:border-blue-600
+      }
+  
+      .h2{
+         @apply text-center font-bold text-xl py-2 mb-3
+      }
+
+      .h3{
+        @apply italic text-xl text-gray-400 py-2 mb-3 mt-16
+     }
+
+     .neutral {
+        @apply italic text-gray-400 
+     }
+
+      .cols{
+        @apply grid grid-cols-2 p-5 gap-1
+    }
+    .input{
+        @apply m-2 rounded p-2
+    }
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
