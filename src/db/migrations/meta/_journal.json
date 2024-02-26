@@ -1,0 +1,48 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1708511649552,
+      "tag": "0000_vengeful_rogue",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1708511827202,
+      "tag": "0001_nice_whiplash",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1708511916056,
+      "tag": "0002_warm_wolf_cub",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1708519714994,
+      "tag": "0003_mute_greymalkin",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1708519855546,
+      "tag": "0004_red_boom_boom",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1708596341056,
+      "tag": "0005_bitter_donald_blake",
+      "breakpoints": true
+    }
+  ]
+}

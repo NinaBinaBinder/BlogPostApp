@@ -1,0 +1,1 @@
+ALTER TABLE "postsTable" ALTER COLUMN "date" SET DATA TYPE timestamp;

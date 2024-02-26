@@ -1,0 +1,1 @@
+ALTER TABLE "commentsTable" RENAME COLUMN "title" TO "user";

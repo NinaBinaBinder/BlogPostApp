@@ -1,0 +1,70 @@
+{
+  "id": "821aa13f-55a3-4644-9877-67ed691f9818",
+  "prevId": "afa9669d-c4d6-499d-b599-9860f19e9d24",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "postsTable": {
+      "name": "postsTable",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "content": {
+          "name": "content",
+          "type": "varchar(500)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "postsId": {
+          "name": "postsId",
+          "type": "serial",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "postsTable_postsId_postsTable_id_fk": {
+          "name": "postsTable_postsId_postsTable_id_fk",
+          "tableFrom": "postsTable",
+          "tableTo": "postsTable",
+          "columnsFrom": [
+            "postsId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
